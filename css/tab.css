@@ -1,0 +1,103 @@
+/* 
+    Author: Mert Nerukuc
+    @knyttneve
+*/
+.colorful-tab-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: background .3s ease 0s; }
+  .colorful-tab-wrapper:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    content: "";
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: scale(2) rotate(10deg);
+    font-size: 70px;
+    transition: all .6s ease 0s;
+    padding-top: 60px;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0);
+    opacity: 0;
+  }
+  .colorful-tab-wrapper.active:before {
+    content: attr(active-tab);
+    transform: scale(1) rotate(0deg);
+    font-family: opensans_reg;
+    z-index: 9;
+    opacity: 1;
+    visibility: visible; }
+  .colorful-tab-wrapper.active .colorful-tab-content {
+    color: white; }
+
+.colorful-tab-background-image {
+  background-attachment: fixed !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important; }
+  .colorful-tab-background-image:after {
+    transition: .5s ease 0s;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    background: #000; }
+  .colorful-tab-background-image.active {
+    background-image: none; }
+    .colorful-tab-background-image.active:after {
+      width: 100%;
+      opacity: .5; }
+
+.colorful-tab-menu {
+  display: flex;
+  flex-wrap: wrap;
+    background: #f1f1f1;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 99; }
+
+  .colorful-tab-menu-item {
+    flex: 1 1 auto;
+    align-self: stretch; }
+
+.colorful-tab-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+
+.colorful-tab-content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  z-index: 9;
+  letter-spacing: .4px;
+  transform: scale(0.9);
+  transition: all .3s ease-in;
+}
+.colorful-tab-content.active {
+    height: auto;
+    overflow: hidden;
+    transition-delay: .7s;
+    width: auto;
+    opacity: 1;
+    filter: blur(0);
+    visibility: visible;
+    transform: scale(1); }
+
+
+
